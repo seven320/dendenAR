@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta
+    name="viewport"
+    
+    content="width=device-width, user-scalable=yes, initial-scale=1.0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>AR Card</title>
+    <!-- A-frame -->
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <!-- AR.js -->
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.5/aframe/build/aframe-ar.js"></script>
+    <script src = "object/link.js"></script>
+  </head>
+
+  <body style='margin : 0px; overflow: hidden;'>
+    <a-scene 
+        embedded arjs='debugUIEnabled:false; patternRatio: 0.8;'
+        renderer="gammaOutPut: true;"
+        vr-mode-ui="enabled: false"
+    >
+    <!-- <a-scene 
+    embedded 
+    arjs='debugUIEnabled:true;'
+    vr-mode-ui="enabled: false"
+    > -->
+    <a-assets>
+      <a-mixin
+      id="text"
+      rotation = "-90 0 0"
+      ></a-mixin>
+      <!-- ditto -->
+      <a-asset-item id="ditton" src="assets/3d/ditton.glb"></a-asset-item>
+      <!-- img -->
+      <img id="github" src="assets/imagess/github.png">
+      <img id="instagram" src="assets/images/instagram.png">
+      <img id="twitter" src="assets/images/twitter.png">
+    </a-assets>
+
+
+    <!-- set marker -->
+    <!-- <a-marker 
+    markerhandler
+    type='pattern' 
+    url='https://awesome-blackwell-a6a402.netlify.com/marker/pattern-zurasi1.patt'> -->
+    <a-marker 
+      markerhandler
+      emitevents="true"
+      preset="hiro"
+      cursor="fuse: false; rayOrigin: mouse"
+     >
+        <!-- ditton3d -->
+        <a-entity
+          gltf-model="#ditton"
+          scale="0.1 0.1 0.1"
+          position="0 0 0"
+          rotation="-20 0 0"
+          animation-mixer>
+        </a-entity>
+
+        <!-- name -->
+        <a-entity
+        rotation = "-90 0 "
+        position="0 0.1 0.5">
+          <a-text 
+          value="denden"
+          color="blue"
+          align="center"
+          width = "5"></a-text>
+        </a-entity>
+
+<!-- 
+        <a-entity
+        rotation = "0 0 0">
+          <a-entity
+          position="0.5 0.1 -0.5"
+          cursor-listener
+          geometry="primitive: box; width: 2; height: 2; depth: 2;" 
+          material="opacity: 0.3;"
+          >
+          </a-entity>
+        </a-entity> -->
+
+
+        <a-entity
+        rotation = "0 0 0"
+        position = "0 -0.01 0"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 30000; easing: linear"
+        >
+        </a-entity>
+      </a-marker>
+
+    <a-entity camera></a-entity>
+    </a-scene>
+    <!-- <script src="object/display.js"></script> -->
+  </body>
+</html>
