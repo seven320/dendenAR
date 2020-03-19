@@ -98,7 +98,7 @@ function display(twitterID, githubID, blog, instagramID, profileURL){
                 cursor-listener-'+param_name+' \
                 > \
                     <a-image \
-                    src="object/image/' + param_name + '.png" \
+                    src="assets/images/' + param_name + '.png" \
                     rotation = "-90 0 0" \
                     position = "0 0 0" \
                     width="0.3" \
