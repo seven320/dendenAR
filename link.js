@@ -64,16 +64,16 @@ function display(twitterID, githubID, blog, instagramID, profileURL){
     var element_num = 5
 
     // name
-    document.getElementById("name_entity").innerHTML = 
-    '<a-entity \
-    rotation = "-90 0 " \
-    position="0 0.1 0.5"> \
-      <a-text \
-      value= ' + username + ' \
-      color="white" \
-      align="center" \
-      width = "5"></a-text> \
-    </a-entity>'
+    // document.getElementById("name_entity").innerHTML = 
+    // '<a-entity \
+    // rotation = "-90 0 " \
+    // position="0 0.1 0.5"> \
+    //   <a-text \
+    //   value= ' + username + ' \
+    //   color="white" \
+    //   align="center" \
+    //   width = "5"></a-text> \
+    // </a-entity>'
 
     class Elements{
         constructor(){
@@ -127,7 +127,7 @@ function display(twitterID, githubID, blog, instagramID, profileURL){
     elements = new Elements()
     elements.display(twitterID, "twitter", "#00aced");
     elements.display(blog, "blog", "blue");
-    elements.display(githubID, "github", "#171515");
+    elements.display(githubID, "twitter", "#171515");
     elements.display(instagramID, "instagram","#3f729b");
     elements.display(profileURL, "profile", "#3CB371")
 }
