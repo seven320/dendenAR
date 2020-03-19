@@ -19,7 +19,6 @@ element_num = 5
 for i in range(element_num):
     y = radius * math.cos(2 * math.pi / element_num * i)
     z = radius * math.sin(2 * math.pi / element_num * i)
-
     y1 = 10 * radius * math.cos(2 * math.pi / element_num * i - math.pi / element_num)
     y2 = 10 * radius * math.cos(2 * math.pi / element_num * i + math.pi / element_num)
     z1 = 10 * radius * math.sin(2 * math.pi / element_num * i - math.pi / element_num)
