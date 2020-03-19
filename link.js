@@ -117,7 +117,7 @@ function display(twitterID, githubID, blog, instagramID, profileURL){
                     vertex-a="' + String(this.link_y_1) + ' 0.1 ' + String(this.link_z_1) + '" \
                     vertex-b="'+String(-this.y)+' 0.1 '+String(-this.z)+'" \
                     vertex-c="' + String(this.link_y_2) + ' 0.1 ' + String(this.link_z_2) + '" \
-                    opacity = "0" \
+                    opacity = "0.5" \
                     ></a-triangle> \
                 </a-entity>'
             this.cnt += 1
