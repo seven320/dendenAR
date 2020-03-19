@@ -53,9 +53,8 @@
 
       <!-- animation="property: rotation; to: 0 360 0; loop: true; dur: 30000; easing: linear" -->
       <a-entity
-        position = "0 -0.01 0"
-        >
-        <!-- twitter -->
+        position = "0 -0.01 0">
+        <!-- twitter
         <a-entity
           position = "0.8 0.01　0"
           link = "https://twitter.com/yosyuaomenww"
@@ -79,10 +78,10 @@
             vertex-b = "-0.8 0.1 -0.0"
             vertex-c = "6.472 0.1 4.702"
             opacity = 1
+            link = "https://twitter.com/yosyuaomenww"
           ></a-triangle>
         </a-entity>
 
-        <!-- github -->
         <a-entity
           position = "0.247 0.01 0.760"
           link = "https://github.com/seven320">
@@ -108,7 +107,6 @@
           ></a-triangle>
         </a-entity>
         
-        <!-- instagram -->
         <a-entity
           position = "-0.647 0.01 0.4702"
           link = "https://www.instagram.com/ken_4y4/?hl=ja">
@@ -134,7 +132,6 @@
           ></a-triangle>
         </a-entity>
 
-        <!-- blog -->
         <a-entity
         position = "-0.64 0.01 -0.47"
         link = "https://denden-seven.hatenablog.com/">
@@ -160,7 +157,6 @@
           ></a-triangle>
         </a-entity>
 
-        <!-- profile -->
         <a-entity
         position = "0.247 0.01 -0.76"
         link = "https://denden.app/">
@@ -184,7 +180,13 @@
             vertex-c = "6.472 0.1 -4.70"
             opacity = 0.9
           ></a-triangle>
-        </a-entity>
+        </a-entity> -->
+      
+        <a-entity id="twitter_entity"></a-entity>
+        <a-entity id="blog_entity"></a-entity>
+        <a-entity id="github_entity"></a-entity>
+        <a-entity id="instagram_entity"></a-entity>
+      </a-entity id="profile_entity"></a-entity>
       </a-entity>
     </a-marker>
 
@@ -202,41 +204,10 @@
           rotation="0 0 0"
           animation-mixer>
         </a-entity>
-
-        <!-- name -->
-        <a-entity
-        rotation = "-90 0 "
-        position="0 0.1 0.5">
-          <a-text 
-          value="denden"
-          color="blue"
-          align="center"
-          width = "5"></a-text>
-        </a-entity>
-
-<!-- 
-        <a-entity
-        rotation = "0 0 0">
-          <a-entity
-          position="0.5 0.1 -0.5"
-          cursor-listener
-          geometry="primitive: box; width: 2; height: 2; depth: 2;" 
-          material="opacity: 0.3;"
-          >
-          </a-entity>
-        </a-entity> -->
-
-
-        <a-entity
-        rotation = "0 0 0"
-        position = "0 -0.01 0"
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 30000; easing: linear"
-        >
-        </a-entity>
       </a-marker>
 
     <a-entity camera></a-entity>
     </a-scene>
-    <!-- <script src="object/display.js"></script> -->
+    <script src="link.js"></script>
   </body>
 </html>
