@@ -13,7 +13,7 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
 
-radius = 0.8
+radius = 2
 element_num = 5
 
 for i in range(element_num):
