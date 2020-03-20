@@ -19,7 +19,7 @@
 
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene 
-        embedded arjs='debugUIEnabled:false; patternRatio: 0.5;'
+        embedded arjs='debugUIEnabled:false; patternRatio: 0.8;'
         vr-mode-ui="enabled: false;"
     >
     <a-assets>
@@ -30,10 +30,11 @@
       <!-- ditto -->
       <!-- <a-asset-item id="ditton" src="assets/3d/scene.gltf"></a-asset-item> -->
       <!-- img -->
+      <img id="icon" src="assets/images/icon.png">
       <img id="github" src="assets/imagess/github.png">
       <img id="instagram" src="assets/images/instagram.png">
       <img id="twitter" src="assets/images/twitter.png">
-      <img id="icon" src="assets/images/icon.png">
+      <img id="blog" src="assets/images/blog.png">
     </a-assets>
 
     <!-- set marker -->
@@ -44,23 +45,16 @@
     emitevent="true"
     cursor="fuse: false; rayOrigin: mouse">
 
-
-    <a-marker
-    markerhandler
-    emitevents="true"
-    preset="hiro"
-    cursor="fuse: false; rayOrigin: mouse">
-
       <a-entity
         position = "0 0.2 0"
         rotations="-90 0 0"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 30000; easing: linear"
         <a-circle
         radius = "0.35"
         src = "#icon"
         ></a-circle>
       </a-entity>
 
-      <!-- animation="property: rotation; to: 0 360 0; loop: true; dur: 30000; easing: linear" -->
       <a-entity
         position = "0 -0.01 0">
         <!-- twitter -->
