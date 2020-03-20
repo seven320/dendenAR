@@ -3,6 +3,15 @@
 function makelink(twitterID, githubID, blog, instagramID, profileURL){
     console.log("makelink")
 
+
+    AFRAME.registerComponent('cursor-listener-icon', {
+        init: function (){
+            this.el.addEventListener('click', function (evt){
+                console.log("icon change")
+            })
+        }
+    })
+
     if(twitterID.length > 0){
         AFRAME.registerComponent('cursor-listener-twitter', {
             init: function (){
