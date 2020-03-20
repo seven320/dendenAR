@@ -19,7 +19,7 @@
 
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene 
-        embedded arjs='debugUIEnabled:false; patternRatio: 0.8;'
+        embedded arjs='debugUIEnabled:false; patternRatio: 0.5;'
         vr-mode-ui="enabled: false;"
     >
     <a-assets>
@@ -28,19 +28,28 @@
       rotation = "-90 0 0"
       ></a-mixin>
       <!-- ditto -->
-      <a-asset-item id="ditton" src="assets/3d/scene.gltf"></a-asset-item>
+      <!-- <a-asset-item id="ditton" src="assets/3d/scene.gltf"></a-asset-item> -->
       <!-- img -->
-      <!-- <img id="github" src="assets/imagess/github.png">
+      <img id="github" src="assets/imagess/github.png">
       <img id="instagram" src="assets/images/instagram.png">
       <img id="twitter" src="assets/images/twitter.png">
-      <img id="icon" src="assets/images/icon.png"> -->
+      <img id="icon" src="assets/images/icon.png">
     </a-assets>
 
     <!-- set marker -->
     <a-marker 
     markerhandler
     type='pattern' 
-    url='assets/qrcode/mycard_denden.patt'>
+    url='assets/qrcode/mycard_denden.patt'
+    emitevent="true"
+    cursor="fuse: false; rayOrigin: mouse">
+
+
+    <a-marker
+    markerhandler
+    emitevents="true"
+    preset="hiro"
+    cursor="fuse: false; rayOrigin: mouse">
 
       <a-entity
         position = "0 0.2 0"
@@ -126,7 +135,7 @@
             color = "gray"
             vertex-a = "-2.472 0.1 7.6084"
             vertex-b = "0.6472 0.1 -0.470"
-            vertex-c = "-8.0 0.1 9.797"
+            vertex-c = "-8.0 0.1 2"
             opacity = 0.9
           ></a-triangle>
         </a-entity>
@@ -149,7 +158,7 @@
           ></a-sphere>
           <a-triangle
             color = "green"
-            vertex-a = "-8.0 0.1 9.797"
+            vertex-a = "-8.0 0.1 2"
             vertex-b = "0.647 0.1 0.470"
             vertex-c = "-2.47 0.1 -7.60"
             opacity = 0.9
@@ -180,22 +189,17 @@
             opacity = 0.9
           ></a-triangle>
         </a-entity>
-      
-        <!-- <a-entity id="twitter_entity"></a-entity>
-        <a-entity id="blog_entity"></a-entity>
-        <a-entity id="github_entity"></a-entity>
-        <a-entity id="instagram_entity"></a-entity>
-        </a-entity id="profile_entity"></a-entity> -->
+
       </a-entity>
     </a-marker>
-
+<!-- 
     <a-marker 
       markerhandler
       emitevents="true"
       preset="hiro"
       cursor="fuse: false; rayOrigin: mouse"
      >
-        <!-- ditton3d -->
+
         <a-entity
           gltf-model="#ditton"
           scale="0.1 0.1 0.1"
@@ -203,7 +207,7 @@
           rotation="0 0 0"
           animation-mixer>
         </a-entity>
-      </a-marker>
+      </a-marker> -->
 
     <a-entity camera></a-entity>
     </a-scene>

@@ -9,6 +9,7 @@ function makelink(twitterID, githubID, blog, instagramID, profileURL){
             const base_twitter = "https://twitter.com"
             var twitter_url = `${base_twitter}/${twitterID}`
             this.el.addEventListener('click', function (evt) {
+                console.log("push twitter")
                 window.open(twitter_url, null, null)
                 });
             }
