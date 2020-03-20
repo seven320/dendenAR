@@ -5,15 +5,15 @@ function makelink(twitter_url, githubID, blog, instagramID, profileURL){
         init: function (){
             this.el.addEventListener('click', function (evt){
                 console.log("icon change")
-                window.open("https://www.google.com", null, nulls)
+                window.open("https://www.google.com", null, null)
             })
         }
     })
 
     AFRAME.registerComponent('cursor-listener-twitter', {
         init: function (){
-        this.el.addEventListener('click', function (evt) {
-            window.open(twitter_url, null, null)
+            this.el.addEventListener('click', function (evt) {
+                window.open(twitter_url, null, null)
             });
         }
     });
