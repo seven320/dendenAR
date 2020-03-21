@@ -162,7 +162,7 @@ function display_elements(twitter_url, ditton_url, github_url, blog_url, instagr
     elements.display(blog_url, "blog", "blue")
     elements.display(instagram_url, "instagram", "#3f729b")
     elements.display(profile_url, "profile", "white")
-    elements.display(ditton_url, "ditton-twitter", color="00aced")
+    // elements.display(ditton_url, "ditton-twitter", color="00aced")
 }
 
 function display_ditton(){
@@ -190,11 +190,11 @@ function display_name(){
     document.getElementById("name_entity").insertAdjacentHTML("afterbegin", 
     '<a-image \
     src="#name" \
-    rotation = "-90 0 0" \
+    rotation = "-90 10 0" \
     width = "1" \
     height = "0.5" \
-    position = "4 0 0"> \
-    opacity = 0.9> \
+    position = "0 0 1.5"> \
+    opacity = 0.8> \
     </a-image>'
     )
 }
