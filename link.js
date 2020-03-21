@@ -138,16 +138,17 @@ function display_elements(twitter_url, github_url, blog_url, instagram_url, prof
                 position="'+ String(this.y) + ' 0.01 ' + String(this.z) + '" \
                 cursor-listener-'+param_name+' \
                 > \
-                    <a-image \
-                    src="#' + param_name + '" \
-                    rotation = "-90 0 0" \
-                    position = "0 0 0" \
-                    width="0.4" \
-                    height="0.4" \
-                    opacity = 0.9 \
-                    animation="property: rotation; to: 0 -360 0; loop: true; dur: 30000; easing: linear" \
-                    > \
-                    </a-image> \
+                    <a-entity \
+                    animation="property: rotation; to: 0 -360 0; loop: true; dur: 30000; easing: linear"> \
+                        <a-image \
+                        src="#' + param_name + '" \
+                        rotation = "-90 0 0" \
+                        position = "0 0 0" \
+                        width="0.4" \
+                        height="0.4" \
+                        opacity = 0.9> \
+                        </a-image> \
+                    </a-entity> \
                     <a-sphere \
                     color = '+ color +' \
                     radius = "0.4" \
