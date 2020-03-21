@@ -183,11 +183,15 @@ function display_ditton(){
     rotation = "-30 0 0" \
     position = "0 0.5 0" \
     cursor-listener-ditton> \
-        <a-entity gltf-model="#ditton" \
-        scale="0.6 0.6 0.6" \
-        rotation="0 -30 0" \
-        animation-mixer> \
-        </a-entity> \
+        <a-circle \
+        rotation = "-90 0 0" \
+        radius = "0.8" \
+        src = "#icon"> \
+        <a-sphere \
+            color = "black" \
+            radius = 1 \
+            opacity = 0.1 \
+        ></a-sphere> \
     </a-entity>'
     )
 }
