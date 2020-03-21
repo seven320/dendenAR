@@ -122,7 +122,7 @@ function display_elements(twitter_url, github_url, blog_url, instagram_url, prof
             cursor-listener-'+param_name+' \
             > \
                 <a-image \
-                src="#' + '" \
+                src="#' + param_name + '" \
                 rotation = "-90 0 0" \
                 position = "0 0 0" \
                 width="0.4" \
@@ -163,14 +163,13 @@ function display_ditton(){
     position = "0 0.2 0" \
     cursor-listener-icon> \
         <a-entity gltf-model="#ditton" \
-        scale="0.1 0.1 0.1" \
-        rotation="0 0 0" \
+        scale="0.3 0.3 0.3" \
+        rotation="0 -30 0" \
         animation-mixer> \
         </a-entity> \
     </a-entity>'
     )
 }
-
 
 
 function denden(){
