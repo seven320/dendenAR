@@ -190,10 +190,10 @@ function display_name(){
     document.getElementById("name_entity").insertAdjacentHTML("afterbegin", 
     '<a-image \
     src="#name" \
-    rotation = "-90 10 0" \
+    rotation = "-90 20 0" \
     width = "1" \
     height = "0.5" \
-    position = "0 0 1.5"> \
+    position = "0 0 1"> \
     opacity = 0.8> \
     </a-image>'
     )
