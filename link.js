@@ -8,7 +8,7 @@ function escapeHtml(str){
     return str;
 }
 
-function makelink(twitter_url, github_url, blog_url, instagram_url, profile_url, ditton_twitter_url){
+function makelink(twitter_url, github_url, blog_url, instagram_url, profile_url, ditton_url){
     AFRAME.registerComponent('cursor-listener-icon', {
         init: function (){
             this.el.addEventListener('click', function (evt){
@@ -29,7 +29,7 @@ function makelink(twitter_url, github_url, blog_url, instagram_url, profile_url,
     AFRAME.registerComponent('cursor-listener-ditton-twitter', {
         init: function(){
             this.el.addEventListener('click',function(evt){
-                window.open(ditton_twitter_url, null, null)
+                window.open(ditton_url, null, null)
             })
         }
     })
@@ -89,25 +89,14 @@ function display_icon(){
         <a-sphere \
             color = "black" \
             radius = 1 \
-            opacity = 0.1 \
+            opacity = 0 \
         ></a-sphere>'
     )
 }
 
-function display_elements(twitter_url, github_url, blog_url, instagram_url, profile_url){
-    // name
-    // document.getElementById("name_entity").insertAdjacentElement
-    // '<a-entity \
-    // rotation = "-90 0 " \
-    // position="0 0.1 0.5"> \
-    //   <a-text \
-    //   value= "DENDEN" \
-    //   color="white" \
-    //   align="center" \
-    //   width = "5"></a-text> \
-    // </a-entity>'
+function display_elements(twitter_url, ditton_url, github_url, blog_url, instagram_url, profile_url){
 
-    datas = [twitter_url, github_url, blog_url, instagram_url, profile_url]
+    datas = [twitter_url, github_url, blog_url, instagram_url, profile_url, ditton_url]
 
     var element_num = 0
     for (var i = 0; i < datas.length; i++){
@@ -159,7 +148,7 @@ function display_elements(twitter_url, github_url, blog_url, instagram_url, prof
                     vertex-a="' + escapeHtml(String(this.link_y_1)) + ' 0.1 ' + escapeHtml(String(this.link_z_1)) + '" \
                     vertex-b="'+ escapeHtml(String(-this.y))+' 0.1 '+escapeHtml(String(-this.z))+'" \
                     vertex-c="' + escapeHtml(String(this.link_y_2)) + ' 0.1 ' + escapeHtml(String(this.link_z_2)) + '" \
-                    opacity = "0.1" \
+                    opacity = "0" \
                     ></a-triangle> \
                 </a-entity>')
             this.cnt += 1
@@ -173,6 +162,7 @@ function display_elements(twitter_url, github_url, blog_url, instagram_url, prof
     elements.display(blog_url, "blog", "blue")
     elements.display(instagram_url, "instagram", "#3f729b")
     elements.display(profile_url, "profile", "white")
+    elements.display(ditton_url, "ditton", color="00aced")
 }
 
 function display_ditton(){
@@ -189,7 +179,7 @@ function display_ditton(){
         <a-sphere \
             color = "black" \
             radius = 1 \
-            opacity = 0.1 \
+            opacity = 0 \
         ></a-sphere> \
     </a-entity>'
     )
@@ -210,14 +200,15 @@ function denden(){
 function hometamon(){
     console.log("hometamon")
 
-    const twitter_url = "https://twitter.com/denden_by"
+    const twitter_url = ""
+    const ditton_url = "https://twitter.com/denden_by"
     const github_url = ""
     const blog_url = ""
     const instagram_url = ""
     const profile_url = ""
 
     display_ditton()
-    display_elements(twitter_url, github_url, blog_url, instagram_url, profile_url)
+    display_elements(twitter_url, ditton_url, github_url, blog_url, instagram_url, profile_url)
 }
 
 const twitter_url = "https://twitter.com/yosyuaomenww"
@@ -225,7 +216,7 @@ const github_url = "https://github.com/seven320"
 const blog_url = "https://denden-seven.hatenablog.com/"
 const instagram_url = "https://www.instagram.com/ken_4y4"
 const profile_url = "https://denden.app/"
-const ditton_twitter_url = "https://twitter.com/denden_by"
-makelink(twitter_url, github_url, blog_url, instagram_url, profile_url, ditton_twitter_url)
+const ditton_url = "https://twitter.com/denden_by"
+makelink(twitter_url, github_url, blog_url, instagram_url, profile_url, ditton_url)
 
 denden()
