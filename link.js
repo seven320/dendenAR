@@ -162,7 +162,7 @@ function display_elements(twitter_url, ditton_url, github_url, blog_url, instagr
     elements.display(blog_url, "blog", "blue")
     elements.display(instagram_url, "instagram", "#3f729b")
     elements.display(profile_url, "profile", "white")
-    elements.display(ditton_url, "ditton", color="00aced")
+    elements.display(ditton_url, "ditton-twitter", color="00aced")
 }
 
 function display_ditton(){
@@ -188,13 +188,15 @@ function display_ditton(){
 function denden(){
     console.log("denden")
     const twitter_url = "https://twitter.com/yosyuaomenww"
+    const ditton_url = ""
     const github_url = "https://github.com/seven320"
     const blog_url = "https://denden-seven.hatenablog.com/"
     const instagram_url = "https://www.instagram.com/ken_4y4"
     const profile_url = "https://denden.app/"
+
     
     display_icon()
-    display_elements(twitter_url, github_url, blog_url, instagram_url, profile_url)
+    display_elements(twitter_url, ditton_url, github_url, blog_url, instagram_url, profile_url)
 }
 
 function hometamon(){
