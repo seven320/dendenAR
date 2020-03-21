@@ -145,7 +145,7 @@ function display_elements(twitter_url, github_url, blog_url, instagram_url, prof
                     width="0.4" \
                     height="0.4" \
                     opacity = 0.9 \
-                    animation="property: rotation; to: -60 -360 0; loop: true; dur: 30000; easing: linear" \
+                    animation="property: rotation; to: 0 -360 0; loop: true; dur: 30000; easing: linear" \
                     > \
                     </a-image> \
                     <a-sphere \
