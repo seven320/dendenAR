@@ -9,30 +9,30 @@ function escapeHtml(str){
 }
 
 function makelink(twitter_url, github_url, blog_url, instagram_url, profile_url, ditton_url){
-    AFRAME.registerComponent('cursor-listener-icon', {
-        init: function (){
-            this.el.addEventListener('click', function (evt){
-                console.log("mode change")
-                hometamon()
-            })
-        }
-    })
+    // AFRAME.registerComponent('cursor-listener-icon', {
+    //     init: function (){
+    //         this.el.addEventListener('click', function (evt){
+    //             console.log("mode change")
+    //             hometamon()
+    //         })
+    //     }
+    // })
 
-    AFRAME.registerComponent('cursor-listener-ditton', {
-        init: function(){
-            this.el.addEventListener('click', function(evt){
-                denden()
-            })
-        }
-    })
+    // AFRAME.registerComponent('cursor-listener-ditton', {
+    //     init: function(){
+    //         this.el.addEventListener('click', function(evt){
+    //             denden()
+    //         })
+    //     }
+    // })
 
-    AFRAME.registerComponent('cursor-listener-ditton-twitter', {
-        init: function(){
-            this.el.addEventListener('click',function(evt){
-                window.open(ditton_url, null, null)
-            })
-        }
-    })
+    // AFRAME.registerComponent('cursor-listener-ditton-twitter', {
+    //     init: function(){
+    //         this.el.addEventListener('click',function(evt){
+    //             window.open(ditton_url, null, null)
+    //         })
+    //     }
+    // })
 
     AFRAME.registerComponent('cursor-listener-twitter', {
         init: function (){
