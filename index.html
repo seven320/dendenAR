@@ -28,7 +28,7 @@
       rotation = "-90 0 0"
       ></a-mixin>
       <!-- ditto -->
-      <!-- <a-asset-item id="ditton" src="assets/3d/scene.gltf"></a-asset-item> -->
+      <a-asset-item id="ditton" src="assets/3d/scene.gltf"></a-asset-item>
       <!-- img -->
       <img id="icon" src="assets/images/icon.png">
       <img id="github" src="assets/images/github.png">
@@ -64,12 +64,12 @@
         radius = "0.8"
         src = "#icon"
         animation = "property: rotation; to: 360 0 0; loop: true; dur: 10000; easing: linear">
-        <a-circle
-        rotation = "90 0 0"
-        radius = "0.8"
-        src = "#icon"
+        <a-entity
+        gltf-model="#ditton"
+        scale="0.1 0.1 0.1"
+        rotation="90 0 0"
         animation = "property: rotation; to: 360 0 0; loop: true; dur: 10000; easing: linear">
-        </a-circle>
+        </a-entity>
         <a-sphere
           color = "black"
           radius = 1
