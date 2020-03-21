@@ -8,7 +8,7 @@ function escapeHtml(str){
     return str;
 }
 
-function makelink(twitter_url, githubID, blog, instagramID, profileURL){
+function makelink(twitter_url, github_url, blog_url, instagram_url, profile_url){
     AFRAME.registerComponent('cursor-listener-icon', {
         init: function (){
             this.el.addEventListener('click', function (evt){
