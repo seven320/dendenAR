@@ -80,7 +80,7 @@ function display_icon(){
     document.getElementById("icon_entity").textContent = ''
     document.getElementById("icon_entity").insertAdjacentHTML("afterbegin",
         '<a-entity \
-        position = "0 0.2 0" \
+        position = "0 0.1 0" \
         cursor-listener-icon> \
         <a-circle \
         rotation = "-90 0 0" \
@@ -119,7 +119,7 @@ function display_elements(twitter_url, ditton_url, github_url, blog_url, instagr
             if(param_url.length > 0){
                 document.getElementById(param_name + "_entity").insertAdjacentHTML("afterbegin",
                 '<a-entity \
-                position="'+ String(this.y) + ' 0.01 ' + String(this.z) + '" \
+                position="'+ String(this.y) + ' 0.05 ' + String(this.z) + '" \
                 cursor-listener-'+param_name+' \
                 > \
                     <a-entity \
@@ -188,7 +188,7 @@ function display_name(){
     rotation = "-90 0 0" \
     width = "1" \
     height = "0.5" \
-    position = "0 0.21 1"> \
+    position = "0 0.01 1"> \
     opacity = 0.8> \
     </a-image>'
     )
