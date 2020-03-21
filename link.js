@@ -26,13 +26,13 @@ function makelink(twitter_url, github_url, blog_url, instagram_url, profile_url,
         }
     })
 
-    AFRAME.registerComponent('cursor-listener-ditton-twitter'), {
+    AFRAME.registerComponent('cursor-listener-ditton-twitter', {
         init: function(){
             this.el.addEventListener('click',function(evt){
                 window.open(ditton_twitter_url, null, null)
             })
         }
-    }
+    })
 
     AFRAME.registerComponent('cursor-listener-twitter', {
         init: function (){
