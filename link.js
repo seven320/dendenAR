@@ -175,7 +175,7 @@ function display_ditton(){
         <a-circle \
         rotation = "-90 0 0" \
         radius = "0.8" \
-        src = "#ditton"> \
+        src = "#ditton_icon"> \
         <a-sphere \
             color = "black" \
             radius = 1 \
