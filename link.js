@@ -166,7 +166,7 @@ function display_elements(twitter_url, github_url, blog_url, instagram_url, prof
             }
         }
     }
-    
+
     elements = new Elements()
     elements.display(twitter_url, "twitter", color = "#00aced")
     elements.display(github_url, "github", color = "#171515")
@@ -206,7 +206,7 @@ function denden(){
 function hometamon(){
     console.log("hometamon")
 
-    const twitter_url = "https://twitter.com/denden_by
+    const twitter_url = "https://twitter.com/denden_by"
     const github_url = ""
     const blog_url = ""
     const instagram_url = ""
