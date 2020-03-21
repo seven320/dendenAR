@@ -68,6 +68,7 @@ function makelink(twitter_url, githubID, blog, instagramID, profileURL){
 
 
 function display_icon(){
+    document.getElementById("icon_entity").textContent = ''
     document.getElementById("icon_entity").insertAdjacentHTML("afterbegin",
         '<a-entity \
         position = "0 0.2 0" \
@@ -114,6 +115,7 @@ function display_elements(twitter_url, github_url, blog_url, instagram_url, prof
             this.link_y_2 = 10 * this.radius * Math.cos(2 * Math.PI / element_num * this.cnt + 1 * Math.PI / element_num)
             this.link_z_1 = 10 * this.radius * Math.sin(2 * Math.PI / element_num * this.cnt - 1 * Math.PI / element_num)
             this.link_z_2 = 10 * this.radius * Math.sin(2 * Math.PI / element_num * this.cnt + 1 * Math.PI / element_num)
+            document.getElementById(param_name + "_entity").textContent = ''
             document.getElementById(param_name + "_entity").insertAdjacentHTML("afterbegin",
             '<a-entity \
             position="'+ String(this.y) + ' 0.01 ' + String(this.z) + '" \
@@ -154,6 +156,21 @@ function display_elements(twitter_url, github_url, blog_url, instagram_url, prof
     elements.display(profile_url, "profile", "white")
 }
 
+function display_ditton(){
+    document.getElementById("icon_entity").textContent = ''
+    document.getElementById("icon_entity").insertAdjacentHTML("afterbegin", 
+    '<a-entity \
+    position = "0 0.2 0" \
+    cursor-listener-icon> \
+        <a-entity gltf-model="#ditton" \
+        scale="0.1 0.1 0.1" \
+        rotation="0 0 0" \
+        animation-mixer> \
+        </a-entity> \
+    </a-entity>'
+    )
+}
+
 
 
 function denden(){
@@ -172,14 +189,8 @@ function denden(){
 
 function hometamon(){
     console.log("hometamon")
-    // ditton
-// document.getElementById("ditto").insertAdjacentHTML("afterbegin", 
-//     '<a-entity gltf-model="#ditton" \
-//     scale="0.1 0.1 0.1" \
-//     rotation="0 0 0" \
-//     animation-mixer> \
-//     </a-entity>'
-// )
+    display_ditton()
 }
+
 
 denden()
