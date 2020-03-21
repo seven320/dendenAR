@@ -85,12 +85,7 @@ function display_icon(){
         <a-circle \
         rotation = "-90 0 0" \
         radius = "0.8" \
-        src = "#icon"> \
-        <a-sphere \
-            color = "black" \
-            radius = 1 \
-            opacity = 0 \
-        ></a-sphere>'
+        src = "#icon">'
     )
 }
 
