@@ -51,6 +51,16 @@ function makelink(twitter_url, githubID, blog, instagramID, profileURL){
     });
 }
 
+document.getElementById("ditto").insertAdjacentHTML("afterbegin", 
+    '<a-entity gltf-model="#ditton" \
+    scale="0.1 0.1 0.1" \
+    rotation="0 0 0" \
+    animation-mixer> \
+    </a-entity>'
+)
+
+
+
 const twitter_url = "https://twitter.com/yosyuaomenww"
 const github_url = "https://github.com/seven320"
 const blog_url = "https://denden-seven.hatenablog.com/"
