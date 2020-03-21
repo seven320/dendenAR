@@ -184,14 +184,14 @@ function display_ditton(){
     position = "0 0.5 0" \
     cursor-listener-ditton> \
         <a-entity gltf-model="#ditton" \
-        scale="1 1 1" \
+        scale="0.6 0.6 0.6" \
         rotation="0 -30 0" \
         animation-mixer> \
         </a-entity> \
         <a-sphere \
         color = "black" \
-        radius = 2 \
-        opacity = 0 \
+        radius = 10 \
+        opacity = 0.1 \
         ></a-sphere>\
     </a-entity>'
     )
@@ -213,14 +213,14 @@ function denden(){
 function hometamon(){
     console.log("hometamon")
 
-    // const twitter_url = "https://twitter.com/denden_by"
-    // const github_url = ""
-    // const blog_url = ""
-    // const instagram_url = ""
-    // const profile_url = ""
+    const twitter_url = ""
+    const github_url = ""
+    const blog_url = ""
+    const instagram_url = ""
+    const profile_url = ""
 
     display_ditton()
-    // display_elements(twitter_url, github_url, blog_url, instagram_url, profile_url)
+    display_elements(twitter_url, github_url, blog_url, instagram_url, profile_url)
     // makelink(twitter_url, github_url, blog_url, instagram_url, profile_url)
 }
 
