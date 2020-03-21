@@ -122,12 +122,12 @@ function denden_display(twitter_url, github_url, blog_url, instagram_url, profil
     }
 
 
-    element = new Element()
-    element.display(twitter_url, "twitter", color = "#00aced")
-    element.display(github_url, "github", color = "#171515")
-    element.display(blog_url, "blog", "blue")
-    element.display(instagram_url, "instagram", "#3f729b")
-    element.display(profile_url, "profile", "white")
+    elements = new Elementss()
+    elements.display(twitter_url, "twitter", color = "#00aced")
+    elements.display(github_url, "github", color = "#171515")
+    elements.display(blog_url, "blog", "blue")
+    elements.display(instagram_url, "instagram", "#3f729b")
+    elements.display(profile_url, "profile", "white")
 }
 
 const twitter_url = "https://twitter.com/yosyuaomenww"
