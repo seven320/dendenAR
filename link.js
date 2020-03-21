@@ -185,6 +185,20 @@ function display_ditton(){
     )
 }
 
+function display_name(){
+    document.getElementById("name_entity").textContent = ''
+    document.getElementById("name_entity").insertAdjacentHTML("afterbegin", 
+    '<a-image \
+    src="#name" \
+    rotation = "-90 0 0" \
+    width = "1" \
+    height = "0.5" \
+    position = "4 0 0"> \
+    opacity = 0.9 \
+    </a-image>'
+    )
+}
+
 function denden(){
     console.log("denden")
     const twitter_url = "https://twitter.com/yosyuaomenww"
@@ -194,7 +208,7 @@ function denden(){
     const instagram_url = "https://www.instagram.com/ken_4y4"
     const profile_url = "https://denden.app/"
 
-    
+    display_name()
     display_icon()
     display_elements(twitter_url, ditton_url, github_url, blog_url, instagram_url, profile_url)
 }
