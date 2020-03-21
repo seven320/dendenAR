@@ -122,7 +122,7 @@ function denden_display(twitter_url, github_url, blog_url, instagram_url, profil
     }
 
 
-    elements = new Elementss()
+    elements = new Elements()
     elements.display(twitter_url, "twitter", color = "#00aced")
     elements.display(github_url, "github", color = "#171515")
     elements.display(blog_url, "blog", "blue")
