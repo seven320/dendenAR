@@ -28,7 +28,7 @@
       rotation = "-90 0 0"
       ></a-mixin>
       <!-- ditto -->
-      <a-asset-item id="ditton" src="assets/3d/scene.gltf"></a-asset-item>
+      <!-- <a-asset-item id="ditton" src="assets/3d/scene.gltf"></a-asset-item> -->
       <!-- img -->
       <img id="icon" src="assets/images/icon.png">
       <img id="github" src="assets/images/github.png">
@@ -56,26 +56,8 @@
     <a-entity
       rotation = "10 0 0"
       >
-      <a-entity
-      position = "0 0.2 0"
-      cursor-listener-icon>
-        <a-circle
-        rotation = "-90 0 0"
-        radius = "0.8"
-        src = "#icon">
-        <!-- <a-entity
-        gltf-model="#ditton"
-        scale="0.1 0.1 0.1"
-        rotation="0 0 0"
-        animation-mixer> -->
-        <a-entity id="ditto"></a-entity>
-        <a-sphere
-          color = "black"
-          radius = 1
-          opacity = 0.1
-        ></a-sphere>
-      </a-entity>
-
+      <a-entity id="icon_entity"></a-entity>
+      <a-entity id="name_entity"></a-entity>
       <a-entity
         position = "0 -0.01 0"
         animation="property: rotation; to: 0 360 0; loop: true; dur: 30000; easing: linear"
@@ -85,136 +67,18 @@
         <a-entity id="blog_entity"></a-entity>
         <a-entity id="github_entity"></a-entity>
         <a-entity id="instagram_entity"></a-entity>
-<!-- 
-        <a-entity
-          position = "1.6 0.01 0.0"
-          cursor-listener-twitter>
-          <a-image
-            src = "#twitter"
-            rotation = "-90 0 0"
-            width = "0.5"
-            height = "0.5"
-            opacity = 0.9
-            animation = "property: rotation; to: -60 -360 0; loop: true; dur: 30000; easing: linear"
-          ></a-image>
-          <a-sphere
-            color = "#00aced"
-            radius = "0.5"
-            opacity = "0.5"
-          ></a-sphere>
-          <a-triangle
-            color = "blue"
-            vertex-a='12.944 0.1 -9.404'
-            vertex-b='-1.6 0.1 -0.0'
-            vertex-c='12.944 0.1 9.4045'
-            opacity = 0.1
-          ></a-triangle>
-        </a-entity>
-
-        <a-entity
-          position = "0.4944 0.01 1.5216"
-          cursor-listener-github>
-          <a-image
-            src = "#github"
-            rotation = "-90 0 0"
-            width = "0.5"
-            height = "0.5"
-            opacity = 0.9
-            animation = "property: rotation; to: -60 -360 0; loop: true; dur: 30000; easing: linear"
-          ></a-image>
-          <a-sphere
-            color = "#171515"
-            radius = "0.5"
-            opacity = "0.5"
-          ></a-sphere>
-          <a-triangle
-            color = "black"
-            vertex-a='12.944 0.1 9.4045'
-            vertex-b='-0.494 0.1 -1.521'
-            vertex-c='-4.944 0.1 15.216'
-            opacity = 0.1
-          ></a-triangle>
-        </a-entity>
-        
-        <a-entity
-          position = "-1.294 0.01 0.9404"
-          cursor-listener-instagram>
-          <a-image
-            src = "#instagram"
-            rotation = "-90 0 0"
-            width = "0.5"
-            height = "0.5"
-            opacity = 0.9
-            animation = "property: rotation; to: -60 -360 0; loop: true; dur: 30000; easing: linear"
-          ></a-image>
-          <a-sphere
-            color = "#3f729b"
-            radius = "0.5"
-            opacity = "0.5"
-          ></a-sphere>
-          <a-triangle
-            color = "gray"
-            vertex-a='-4.944 0.1 15.216'
-            vertex-b='1.2944 0.1 -0.940'
-            vertex-c='-16.0 0.1 1.9594'
-            opacity = 0.1
-          ></a-triangle>
-        </a-entity>
-
-        <a-entity
-        position = "-1.294 0.01 -0.940"
-        cursor-listener-blog>
-          <a-image
-            src = "#blog"
-            rotation = "-90 0 0"
-            width = "0.5"
-            height = "0.5"
-            opacity = 0.9
-            animation = "property: rotation; to: -60 -360 0; loop: true; dur: 30000; easing: linear"
-          ></a-image>
-          <a-sphere
-            color = "blue"
-            radius = "0.5"
-            opacity = "0.5"
-          ></a-sphere>
-          <a-triangle
-            color = "green"
-            vertex-a='-16.0 0.1 1.9594'
-            vertex-b='1.2944 0.1 0.9404'
-            vertex-c='-4.944 0.1 -15.21'
-            opacity = 0.1
-          ></a-triangle>
-        </a-entity>
-
-        <a-entity
-        position = "0.4944 0.01 -1.521"
-        cursor-listener-profile>
-          <a-image
-            src = "#profile"
-            rotation = "-90 0 0"
-            width = "0.5"
-            height = "0.5"
-            opacity = 0.9
-            animation = "property: rotation; to: -60 -360 0; loop: true; dur: 30000; easing: linear"
-          ></a-image>
-          <a-sphere
-            color = "white"
-            radius = "0.5"
-            opacity = "0.5"
-          ></a-sphere>
-          <a-triangle
-            color = "white"
-            vertex-a='-4.944 0.1 -15.21'
-            vertex-b='-0.494 0.1 1.5216'
-            vertex-c='12.944 0.1 -9.404'
-            opacity = 0.1
-          ></a-triangle>
-        </a-entity> -->
-
       </a-entity>
     </a-entity>
 
     </a-marker>
+
+            <!-- <a-entity
+        gltf-model="#ditton"
+        scale="0.1 0.1 0.1"
+        rotation="0 0 0"
+        animation-mixer> -->
+
+
 <!-- 
     <a-marker 
       markerhandler

@@ -1,11 +1,26 @@
 /* product */
+function escapeHtml(str){
+    str = str.replace(/&/g, '&amp;');
+    str = str.replace(/</g, '&lt;');
+    str = str.replace(/>/g, '&gt;');
+    str = str.replace(/"/g, '&quot;');
+    str = str.replace(/'/g, '&#39;');
+    return str;
+}
+
+var mode = 0
 
 function makelink(twitter_url, githubID, blog, instagramID, profileURL){
     AFRAME.registerComponent('cursor-listener-icon', {
         init: function (){
             this.el.addEventListener('click', function (evt){
-                console.log("icon change")
-                window.open("https://www.google.com", null, null)
+                console.log("mode change")
+                mode = mode + 1
+                if (mode % 2 == 0){
+                    denden()
+                } else{
+                    hometamon()
+                }
             })
         }
     })
@@ -51,28 +66,38 @@ function makelink(twitter_url, githubID, blog, instagramID, profileURL){
     });
 }
 
-// ditton
-document.getElementById("ditto").insertAdjacentHTML("afterbegin", 
-    '<a-entity gltf-model="#ditton" \
-    scale="0.1 0.1 0.1" \
-    rotation="0 0 0" \
-    animation-mixer> \
-    </a-entity>'
-)
 
+function display_icon(){
+    document.getElementById("icon_entity").insertAdjacentHTML("afterbegin",
+        '<a-entity \
+        position = "0 0.2 0" \
+        cursor-listener-icon> \
+        <a-circle \
+        rotation = "-90 0 0" \
+        radius = "0.8" \
+        src = "#icon"> \
+        <a-sphere \
+            color = "black" \
+            radius = 1 \
+            opacity = 0.1 \
+        ></a-sphere>'
+    )
+}
 
-function denden_display(twitter_url, github_url, blog_url, instagram_url, profile_url){
+function display_elements(twitter_url, github_url, blog_url, instagram_url, profile_url){
     // name
-    // document.getElementById("name_entity").innerHTML = 
+    // document.getElementById("name_entity").insertAdjacentElement
     // '<a-entity \
     // rotation = "-90 0 " \
     // position="0 0.1 0.5"> \
     //   <a-text \
-    //   value= ' + escapeHtml(username) + ' \
+    //   value= "DENDEN" \
     //   color="white" \
     //   align="center" \
     //   width = "5"></a-text> \
     // </a-entity>'
+
+    var element_num = 5
 
     class Elements{
         constructor(){
@@ -121,7 +146,6 @@ function denden_display(twitter_url, github_url, blog_url, instagram_url, profil
         }
     }
 
-
     elements = new Elements()
     elements.display(twitter_url, "twitter", color = "#00aced")
     elements.display(github_url, "github", color = "#171515")
@@ -130,14 +154,32 @@ function denden_display(twitter_url, github_url, blog_url, instagram_url, profil
     elements.display(profile_url, "profile", "white")
 }
 
-const twitter_url = "https://twitter.com/yosyuaomenww"
-const github_url = "https://github.com/seven320"
-const blog_url = "https://denden-seven.hatenablog.com/"
-const instagram_url = "https://www.instagram.com/ken_4y4"
-const profile_url = "https://denden.app/"
-
-var element_num = 5
 
 
-denden_display(twitter_url, github_url, blog_url, instagram_url, profile_url)
-makelink(twitter_url, github_url, blog_url, instagram_url, profile_url)
+function denden(){
+    console.log("denden")
+
+    const twitter_url = "https://twitter.com/yosyuaomenww"
+    const github_url = "https://github.com/seven320"
+    const blog_url = "https://denden-seven.hatenablog.com/"
+    const instagram_url = "https://www.instagram.com/ken_4y4"
+    const profile_url = "https://denden.app/"
+    
+    display_icon()
+    display_elements(twitter_url, github_url, blog_url, instagram_url, profile_url)
+    makelink(twitter_url, github_url, blog_url, instagram_url, profile_url)
+}
+
+function hometamon(){
+    console.log("hometamon")
+    // ditton
+// document.getElementById("ditto").insertAdjacentHTML("afterbegin", 
+//     '<a-entity gltf-model="#ditton" \
+//     scale="0.1 0.1 0.1" \
+//     rotation="0 0 0" \
+//     animation-mixer> \
+//     </a-entity>'
+// )
+}
+
+denden()
