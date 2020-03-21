@@ -8,7 +8,7 @@ function escapeHtml(str){
     return str;
 }
 
-function makelink(twitter_url, github_url, blog_url, instagram_url, profile_urls){
+function makelink(twitter_url, github_url, blog_url, instagram_url, profile_url, ditton_twitter_url){
     AFRAME.registerComponent('cursor-listener-icon', {
         init: function (){
             this.el.addEventListener('click', function (evt){
@@ -26,55 +26,53 @@ function makelink(twitter_url, github_url, blog_url, instagram_url, profile_urls
         }
     })
 
-    if(twitter_url.length > 0){
-        AFRAME.registerComponent('cursor-listener-twitter', {
-            init: function (){
-                this.el.addEventListener('click', function (evt) {
-                    window.open(twitter_url, null, null)
-                });
-            }
-        });
+    AFRAME.registerComponent('cursor-listener-ditton-twitter'), {
+        init: function(){
+            this.el.addEventListener('click',function(evt){
+                window.open(ditton_twitter_url, null, null)
+            })
+        }
     }
 
-    if(blog_url.length > 0){
-        AFRAME.registerComponent('cursor-listener-blog',{
-            init: function () {
-                this.el.addEventListener('click', function (evt) {
-                    window.open(blog_url, null, null)
-                })
-            }
-        });
-    }
+    AFRAME.registerComponent('cursor-listener-twitter', {
+        init: function (){
+            this.el.addEventListener('click', function (evt) {
+                window.open(twitter_url, null, null)
+            });
+        }
+    });
 
-    if(github_url.length > 0){
-        AFRAME.registerComponent('cursor-listener-github',{
-            init: function () {
-                this.el.addEventListener('click', function (evt) {
-                    window.open(github_url, null, null)
-                })
-            }
-        });
-    }
+    AFRAME.registerComponent('cursor-listener-blog',{
+        init: function () {
+            this.el.addEventListener('click', function (evt) {
+                window.open(blog_url, null, null)
+            })
+        }
+    });
 
-    if(instagram_url.length > 0){
-        AFRAME.registerComponent('cursor-listener-instagram',{
-            init: function () {
-                this.el.addEventListener('click', function (evt) {
-                    window.open(instagram_url, null, null)
-                })
-            }
-        });
-    }
+    AFRAME.registerComponent('cursor-listener-github',{
+        init: function () {
+            this.el.addEventListener('click', function (evt) {
+                window.open(github_url, null, null)
+            })
+        }
+    });
 
-    if(profile_url.length > 0){
-        AFRAME.registerComponent('cursor-listener-profile',{
-            init: function () {
-                this.el.addEventListener('click', function (evt) {
-                    window.open(profile_url, null, null)
-                })
-            }
-        });
-    }
+    AFRAME.registerComponent('cursor-listener-instagram',{
+        init: function () {
+            this.el.addEventListener('click', function (evt) {
+                window.open(instagram_url, null, null)
+            })
+        }
+    });
+
+    AFRAME.registerComponent('cursor-listener-profile',{
+        init: function () {
+            this.el.addEventListener('click', function (evt) {
+                window.open(profile_url, null, null)
+            })
+        }
+    });
 }
 
 
@@ -180,13 +178,13 @@ function display_ditton(){
     document.getElementById("icon_entity").textContent = ''
     document.getElementById("icon_entity").insertAdjacentHTML("afterbegin", 
     '<a-entity \
-    rotation = "-30 0 0" \
-    position = "0 0.5 0" \
+    rotation = "0 0 0" \
+    position = "0 0.2 0" \
     cursor-listener-ditton> \
         <a-circle \
         rotation = "-90 0 0" \
         radius = "0.8" \
-        src = "#icon"> \
+        src = "#ditton"> \
         <a-sphere \
             color = "black" \
             radius = 1 \
@@ -206,13 +204,12 @@ function denden(){
     
     display_icon()
     display_elements(twitter_url, github_url, blog_url, instagram_url, profile_url)
-    makelink(twitter_url, github_url, blog_url, instagram_url, profile_url)
 }
 
 function hometamon(){
     console.log("hometamon")
 
-    const twitter_url = ""
+    const twitter_url = "https://twitter.com/denden_by"
     const github_url = ""
     const blog_url = ""
     const instagram_url = ""
@@ -220,7 +217,14 @@ function hometamon(){
 
     display_ditton()
     display_elements(twitter_url, github_url, blog_url, instagram_url, profile_url)
-    // makelink(twitter_url, github_url, blog_url, instagram_url, profile_url)
 }
+
+const twitter_url = "https://twitter.com/yosyuaomenww"
+const github_url = "https://github.com/seven320"
+const blog_url = "https://denden-seven.hatenablog.com/"
+const instagram_url = "https://www.instagram.com/ken_4y4"
+const profile_url = "https://denden.app/"
+const ditton_twitter_url = "https://twitter.com/denden_by"
+makelink(twitter_url, github_url, blog_url, instagram_url, profile_url, ditton_twitter_url)
 
 denden()
