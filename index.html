@@ -39,37 +39,28 @@
     </a-assets>
 
     <!-- set marker -->
-    <!-- <a-marker 
+    <a-marker 
     markerhandler
     type='pattern' 
     url='assets/qrcode/mycard_denden.patt'
     emitevent="true"
-    cursor="fuse: false; rayOrigin: mouse"> -->
-
-    <a-marker 
-    markerhandler
-    emitevents="true"
-    preset="hiro"
-    cursor="fuse: false; rayOrigin: mouse"
-   >
-
-    <a-entity
-      rotation = "10 0 0"
-      >
-      <a-entity id="icon_entity"></a-entity>
-      <a-entity id="name_entity"></a-entity>
+    cursor="fuse: false; rayOrigin: mouse">
       <a-entity
-        position = "0 -0.01 0"
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 30000; easing: linear"
+        rotation = "10 0 0"
         >
-        <a-entity id="profile_entity"></a-entity>
-        <a-entity id="twitter_entity"></a-entity>
-        <a-entity id="blog_entity"></a-entity>
-        <a-entity id="github_entity"></a-entity>
-        <a-entity id="instagram_entity"></a-entity>
+        <a-entity id="icon_entity"></a-entity>
+        <a-entity id="name_entity"></a-entity>
+        <a-entity
+          position = "0 -0.01 0"
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 30000; easing: linear"
+          >
+          <a-entity id="profile_entity"></a-entity>
+          <a-entity id="twitter_entity"></a-entity>
+          <a-entity id="blog_entity"></a-entity>
+          <a-entity id="github_entity"></a-entity>
+          <a-entity id="instagram_entity"></a-entity>
+        </a-entity>
       </a-entity>
-    </a-entity>
-
     </a-marker>
 
             <!-- <a-entity

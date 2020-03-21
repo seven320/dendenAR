@@ -25,45 +25,55 @@ function makelink(twitter_url, githubID, blog, instagramID, profileURL){
         }
     })
 
-    AFRAME.registerComponent('cursor-listener-twitter', {
-        init: function (){
-            this.el.addEventListener('click', function (evt) {
-                window.open(twitter_url, null, null)
-            });
-        }
-    });
+    if(twitter_url.length > 0){
+        AFRAME.registerComponent('cursor-listener-twitter', {
+            init: function (){
+                this.el.addEventListener('click', function (evt) {
+                    window.open(twitter_url, null, null)
+                });
+            }
+        });
+    }
 
-    AFRAME.registerComponent('cursor-listener-blog',{
-        init: function () {
-            this.el.addEventListener('click', function (evt) {
-                window.open(blog_url, null, null)
-            })
-        }
-    });
+    if(blog_url.length > 0){
+        AFRAME.registerComponent('cursor-listener-blog',{
+            init: function () {
+                this.el.addEventListener('click', function (evt) {
+                    window.open(blog_url, null, null)
+                })
+            }
+        });
+    }
 
-    AFRAME.registerComponent('cursor-listener-github',{
-        init: function () {
-            this.el.addEventListener('click', function (evt) {
-                window.open(github_url, null, null)
-            })
-        }
-    });
+    if(github_url.length > 0){
+        AFRAME.registerComponent('cursor-listener-github',{
+            init: function () {
+                this.el.addEventListener('click', function (evt) {
+                    window.open(github_url, null, null)
+                })
+            }
+        });
+    }
 
-    AFRAME.registerComponent('cursor-listener-instagram',{
-        init: function () {
-            this.el.addEventListener('click', function (evt) {
-                window.open(instagram_url, null, null)
-            })
-        }
-    });
+    if(instagram_url.length > 0){
+        AFRAME.registerComponent('cursor-listener-instagram',{
+            init: function () {
+                this.el.addEventListener('click', function (evt) {
+                    window.open(instagram_url, null, null)
+                })
+            }
+        });
+    }
 
-    AFRAME.registerComponent('cursor-listener-profile',{
-        init: function () {
-            this.el.addEventListener('click', function (evt) {
-                window.open(profile_url, null, null)
-            })
-        }
-    });
+    if(profile_url.length > 0){
+        AFRAME.registerComponent('cursor-listener-profile',{
+            init: function () {
+                this.el.addEventListener('click', function (evt) {
+                    window.open(profile_url, null, null)
+                })
+            }
+        });
+    }
 }
 
 
@@ -98,7 +108,14 @@ function display_elements(twitter_url, github_url, blog_url, instagram_url, prof
     //   width = "5"></a-text> \
     // </a-entity>'
 
-    var element_num = 5
+    datas = [twitter_url, github_url, blog_url, instagram_url, profile_url]
+
+    var element_num = 0
+    for (var i = 0; i < datas.length; i++){
+        if(datas[i].length > 0){
+            element_num += 1
+        }
+    }
 
     class Elements{
         constructor(){
@@ -116,38 +133,40 @@ function display_elements(twitter_url, github_url, blog_url, instagram_url, prof
             this.link_z_1 = 10 * this.radius * Math.sin(2 * Math.PI / element_num * this.cnt - 1 * Math.PI / element_num)
             this.link_z_2 = 10 * this.radius * Math.sin(2 * Math.PI / element_num * this.cnt + 1 * Math.PI / element_num)
             document.getElementById(param_name + "_entity").textContent = ''
-            document.getElementById(param_name + "_entity").insertAdjacentHTML("afterbegin",
-            '<a-entity \
-            position="'+ String(this.y) + ' 0.01 ' + String(this.z) + '" \
-            cursor-listener-'+param_name+' \
-            > \
-                <a-image \
-                src="#' + param_name + '" \
-                rotation = "-90 0 0" \
-                position = "0 0 0" \
-                width="0.4" \
-                height="0.4" \
-                opacity = 0.9 \
-                animation="property: rotation; to: -60 -360 0; loop: true; dur: 30000; easing: linear" \
+            if(param_url.length > 0){
+                document.getElementById(param_name + "_entity").insertAdjacentHTML("afterbegin",
+                '<a-entity \
+                position="'+ String(this.y) + ' 0.01 ' + String(this.z) + '" \
+                cursor-listener-'+param_name+' \
                 > \
-                </a-image> \
-                <a-sphere \
-                color = '+ color +' \
-                radius = "0.4" \
-                opacity = "0.4" \
-                > \
-                <a-triangle \
-                color = "green" \
-                vertex-a="' + escapeHtml(String(this.link_y_1)) + ' 0.1 ' + escapeHtml(String(this.link_z_1)) + '" \
-                vertex-b="'+ escapeHtml(String(-this.y))+' 0.1 '+escapeHtml(String(-this.z))+'" \
-                vertex-c="' + escapeHtml(String(this.link_y_2)) + ' 0.1 ' + escapeHtml(String(this.link_z_2)) + '" \
-                opacity = "0.1" \
-                ></a-triangle> \
-            </a-entity>')
-        this.cnt += 1
+                    <a-image \
+                    src="#' + param_name + '" \
+                    rotation = "-90 0 0" \
+                    position = "0 0 0" \
+                    width="0.4" \
+                    height="0.4" \
+                    opacity = 0.9 \
+                    animation="property: rotation; to: -60 -360 0; loop: true; dur: 30000; easing: linear" \
+                    > \
+                    </a-image> \
+                    <a-sphere \
+                    color = '+ color +' \
+                    radius = "0.4" \
+                    opacity = "0.4" \
+                    > \
+                    <a-triangle \
+                    color = "green" \
+                    vertex-a="' + escapeHtml(String(this.link_y_1)) + ' 0.1 ' + escapeHtml(String(this.link_z_1)) + '" \
+                    vertex-b="'+ escapeHtml(String(-this.y))+' 0.1 '+escapeHtml(String(-this.z))+'" \
+                    vertex-c="' + escapeHtml(String(this.link_y_2)) + ' 0.1 ' + escapeHtml(String(this.link_z_2)) + '" \
+                    opacity = "0.1" \
+                    ></a-triangle> \
+                </a-entity>')
+            this.cnt += 1
+            }
         }
     }
-
+    
     elements = new Elements()
     elements.display(twitter_url, "twitter", color = "#00aced")
     elements.display(github_url, "github", color = "#171515")
@@ -171,10 +190,8 @@ function display_ditton(){
     )
 }
 
-
 function denden(){
     console.log("denden")
-
     const twitter_url = "https://twitter.com/yosyuaomenww"
     const github_url = "https://github.com/seven320"
     const blog_url = "https://denden-seven.hatenablog.com/"
@@ -188,8 +205,16 @@ function denden(){
 
 function hometamon(){
     console.log("hometamon")
-    display_ditton()
-}
 
+    const twitter_url = "https://twitter.com/denden_by
+    const github_url = ""
+    const blog_url = ""
+    const instagram_url = ""
+    const profile_url = ""
+
+    display_ditton()
+    display_elements(twitter_url, github_url, blog_url, instagram_url, profile_url)
+    makelink(twitter_url, github_url, blog_url, instagram_url, profile_url)
+}
 
 denden()
