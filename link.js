@@ -194,7 +194,7 @@ function display_name(){
     width = "1" \
     height = "0.5" \
     position = "4 0 0"> \
-    opacity = 0.9 \
+    opacity = 0.9> \
     </a-image>'
     )
 }
