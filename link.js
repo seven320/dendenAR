@@ -8,19 +8,20 @@ function escapeHtml(str){
     return str;
 }
 
-var mode = 0
-
 function makelink(twitter_url, githubID, blog, instagramID, profileURL){
     AFRAME.registerComponent('cursor-listener-icon', {
         init: function (){
             this.el.addEventListener('click', function (evt){
                 console.log("mode change")
-                mode = mode + 1
-                if (mode % 2 == 0){
-                    denden()
-                } else{
-                    hometamon()
-                }
+                hometamon()
+            })
+        }
+    })
+
+    AFRAME.registerComponent('cursor-listenr-ditton', {
+        init: function(){
+            this.el.addEventListener('click', function(evt){
+                denden()
             })
         }
     })
@@ -179,8 +180,9 @@ function display_ditton(){
     document.getElementById("icon_entity").textContent = ''
     document.getElementById("icon_entity").insertAdjacentHTML("afterbegin", 
     '<a-entity \
-    position = "0 0.2 0" \
-    cursor-listener-icon> \
+    rotation = "20 0 0" \
+    position = "0 0.5 0" \
+    cursor-listener-ditton> \
         <a-entity gltf-model="#ditton" \
         scale="0.3 0.3 0.3" \
         rotation="0 -30 0" \
