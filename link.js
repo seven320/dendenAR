@@ -18,7 +18,7 @@ function makelink(twitter_url, github_url, blog_url, instagram_url, profile_urls
         }
     })
 
-    AFRAME.registerComponent('cursor-listenr-ditton', {
+    AFRAME.registerComponent('cursor-listener-ditton', {
         init: function(){
             this.el.addEventListener('click', function(evt){
                 denden()
@@ -180,7 +180,7 @@ function display_ditton(){
     document.getElementById("icon_entity").textContent = ''
     document.getElementById("icon_entity").insertAdjacentHTML("afterbegin", 
     '<a-entity \
-    rotation = "-20 0 0" \
+    rotation = "-30 0 0" \
     position = "0 0.5 0" \
     cursor-listener-ditton> \
         <a-entity gltf-model="#ditton" \
@@ -188,11 +188,6 @@ function display_ditton(){
         rotation="0 -30 0" \
         animation-mixer> \
         </a-entity> \
-        <a-sphere \
-        color = "black" \
-        radius = 10 \
-        opacity = 0.1 \
-        ></a-sphere>\
     </a-entity>'
     )
 }
