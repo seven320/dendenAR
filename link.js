@@ -60,13 +60,6 @@ document.getElementById("ditto").insertAdjacentHTML("afterbegin",
     </a-entity>'
 )
 
-const twitter_url = "https://twitter.com/yosyuaomenww"
-const github_url = "https://github.com/seven320"
-const blog_url = "https://denden-seven.hatenablog.com/"
-const instagram_url = "https://www.instagram.com/ken_4y4"
-const profile_url = "https://denden.app/"
-
-var element_num = 5
 
 function denden_display(twitter_url, github_url, blog_url, instagram_url, profile_url){
     // name
@@ -135,6 +128,16 @@ function denden_display(twitter_url, github_url, blog_url, instagram_url, profil
     element.display(blog_url, "blog", "blue")
     element.display(instagram_url, "instagram", "#3f729b")
     element.display(profile_url, "profile", "white")
+}
 
-denden_display(witter_url, github_url, blog_url, instagram_url, profile_url)
+const twitter_url = "https://twitter.com/yosyuaomenww"
+const github_url = "https://github.com/seven320"
+const blog_url = "https://denden-seven.hatenablog.com/"
+const instagram_url = "https://www.instagram.com/ken_4y4"
+const profile_url = "https://denden.app/"
+
+var element_num = 5
+
+
+denden_display(twitter_url, github_url, blog_url, instagram_url, profile_url)
 makelink(twitter_url, github_url, blog_url, instagram_url, profile_url)
