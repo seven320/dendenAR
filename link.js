@@ -8,7 +8,7 @@ function escapeHtml(str){
     return str;
 }
 
-function makelink(twitter_url, github_url, blog_url, instagram_url, profile_url){
+function makelink(twitter_url, github_url, blog_url, instagram_url, profile_urls){
     AFRAME.registerComponent('cursor-listener-icon', {
         init: function (){
             this.el.addEventListener('click', function (evt){
@@ -180,14 +180,19 @@ function display_ditton(){
     document.getElementById("icon_entity").textContent = ''
     document.getElementById("icon_entity").insertAdjacentHTML("afterbegin", 
     '<a-entity \
-    rotation = "20 0 0" \
+    rotation = "-20 0 0" \
     position = "0 0.5 0" \
     cursor-listener-ditton> \
         <a-entity gltf-model="#ditton" \
-        scale="0.3 0.3 0.3" \
+        scale="1 1 1" \
         rotation="0 -30 0" \
         animation-mixer> \
         </a-entity> \
+        <a-sphere \
+        color = "black" \
+        radius = 2 \
+        opacity = 0 \
+        ></a-sphere>\
     </a-entity>'
     )
 }
@@ -208,15 +213,15 @@ function denden(){
 function hometamon(){
     console.log("hometamon")
 
-    const twitter_url = "https://twitter.com/denden_by"
-    const github_url = ""
-    const blog_url = ""
-    const instagram_url = ""
-    const profile_url = ""
+    // const twitter_url = "https://twitter.com/denden_by"
+    // const github_url = ""
+    // const blog_url = ""
+    // const instagram_url = ""
+    // const profile_url = ""
 
     display_ditton()
-    display_elements(twitter_url, github_url, blog_url, instagram_url, profile_url)
-    makelink(twitter_url, github_url, blog_url, instagram_url, profile_url)
+    // display_elements(twitter_url, github_url, blog_url, instagram_url, profile_url)
+    // makelink(twitter_url, github_url, blog_url, instagram_url, profile_url)
 }
 
 denden()
