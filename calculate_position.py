@@ -13,7 +13,7 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
 
-radius = 2
+radius = 1.6
 element_num = 5
 
 for i in range(element_num):
@@ -26,8 +26,8 @@ for i in range(element_num):
 
     print("i:",i)
     print("position = " + str(y)[:6] + " 0.01 " + str(z)[:6])
-    print("vertex-a : "+str(y1)[:6] +" 0.1 " + str(z1)[:6])
-    print("vertex-b : " + str(-1 * y)[:6]+ " 0.1 " + str(-1 * z)[:6])
-    print("vertex-c : "+str(y2)[:6] + " 0.1 " + str(z2)[:6])
+    print("vertex-a='"+str(y1)[:6] +" 0.1 " + str(z1)[:6]+"'")
+    print("vertex-b='" + str(-1 * y)[:6]+ " 0.1 " + str(-1 * z)[:6] + "'")
+    print("vertex-c='"+str(y2)[:6] + " 0.1 " + str(z2)[:6] + "'")
 
     

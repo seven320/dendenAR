@@ -19,7 +19,7 @@
 
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene 
-        embedded arjs='debugUIEnabled:false; patternRatio: 0.8;'
+        embedded arjs='debugUIEnabled:false; patternRatio: 0.5;'
         vr-mode-ui="enabled: false;"
     >
     <a-assets>
@@ -39,26 +39,35 @@
     </a-assets>
 
     <!-- set marker -->
-    <a-marker 
+    <!-- <a-marker 
     markerhandler
     type='pattern' 
     url='assets/qrcode/mycard_denden.patt'
     emitevent="true"
-    cursor="fuse: false; rayOrigin: mouse">
+    cursor="fuse: false; rayOrigin: mouse"> -->
+
+    <a-marker 
+    markerhandler
+    emitevents="true"
+    preset="hiro"
+    cursor="fuse: false; rayOrigin: mouse"
+   >
 
     <a-entity
-      rotation = "10 0 0">
+      rotation = "10 0 0"
+      >
       <a-entity
       position = "0 0.1 0"
       cursor-listener-icon>
         <a-circle
         rotation = "-90 0 0"
-        radius = "1"
-        src = "#icon">
+        radius = "0.8"
+        src = "#icon"
+        animation = "property: rotation; to: 360 0 0; loop: true; dur: 10000; easing: linear">
         </a-circle>
         <a-sphere
           color = "black"
-          radius = 1.1
+          radius = 1
           opacity = 0.1
         ></a-sphere>
       </a-entity>
@@ -69,7 +78,7 @@
         >
         <!-- twitter -->
         <a-entity
-          position = "2.0 0.01　0"
+          position = "1.6 0.01 0.0"
           cursor-listener-twitter>
           <a-image
             src = "#twitter"
@@ -86,15 +95,15 @@
           ></a-sphere>
           <a-triangle
             color = "blue"
-            vertex-a = "16.180 0.1 -11.75"
-            vertex-b = "-2.0 0.1 -0.0"
-            vertex-c = "16.180 0.1 11.755"
+            vertex-a='12.944 0.1 -9.404'
+            vertex-b='-1.6 0.1 -0.0'
+            vertex-c='12.944 0.1 9.4045'
             opacity = 0.1
           ></a-triangle>
         </a-entity>
 
         <a-entity
-          position = "0.6180 0.01 1.9021"
+          position = "0.4944 0.01 1.5216"
           cursor-listener-github>
           <a-image
             src = "#github"
@@ -111,15 +120,15 @@
           ></a-sphere>
           <a-triangle
             color = "black"
-            vertex-a = "16.180 0.1 11.755"
-            vertex-b = "-0.618 0.1 -1.902"
-            vertex-c = "-6.180 0.1 19.021"
+            vertex-a='12.944 0.1 9.4045'
+            vertex-b='-0.494 0.1 -1.521'
+            vertex-c='-4.944 0.1 15.216'
             opacity = 0.1
           ></a-triangle>
         </a-entity>
         
         <a-entity
-          position = "-1.618 0.01 1.1755"
+          position = "-1.294 0.01 0.9404"
           cursor-listener-instagram>
           <a-image
             src = "#instagram"
@@ -136,15 +145,15 @@
           ></a-sphere>
           <a-triangle
             color = "gray"
-            vertex-a = "-6.180 0.1 19.021"
-            vertex-b = "1.6180 0.1 -1.175"
-            vertex-c = "-20.0 0.1 2.4492"
+            vertex-a='-4.944 0.1 15.216'
+            vertex-b='1.2944 0.1 -0.940'
+            vertex-c='-16.0 0.1 1.9594'
             opacity = 0.1
           ></a-triangle>
         </a-entity>
 
         <a-entity
-        position = "-1.618 0.01 -1.175"
+        position = "-1.294 0.01 -0.940"
         cursor-listener-blog>
           <a-image
             src = "#blog"
@@ -161,15 +170,15 @@
           ></a-sphere>
           <a-triangle
             color = "green"
-            vertex-a = "-20.0 0.1 2.4492"
-            vertex-b = "1.6180 0.1 1.1755"
-            vertex-c = "-6.180 0.1 -19.02"
+            vertex-a='-16.0 0.1 1.9594'
+            vertex-b='1.2944 0.1 0.9404'
+            vertex-c='-4.944 0.1 -15.21'
             opacity = 0.1
           ></a-triangle>
         </a-entity>
 
         <a-entity
-        position = "0.6180 0.01 -1.902"
+        position = "0.4944 0.01 -1.521"
         cursor-listener-profile>
           <a-image
             src = "#profile"
@@ -186,17 +195,16 @@
           ></a-sphere>
           <a-triangle
             color = "white"
-            vertex-a = "-6.180 0.1 -19.02"
-            vertex-b = "-0.618 0.1 1.9021"
-            vertex-c = "16.180 0.1 -11.75"
+            vertex-a='-4.944 0.1 -15.21'
+            vertex-b='-0.494 0.1 1.5216'
+            vertex-c='12.944 0.1 -9.404'
             opacity = 0.1
           ></a-triangle>
         </a-entity>
 
       </a-entity>
-s    </a-entity>
+    </a-entity>
 
-      
     </a-marker>
 <!-- 
     <a-marker 
