@@ -23,7 +23,10 @@ AFRAME.registerComponent('open-link', {
   schema: { type: 'string' },
   init() {
     let lastOpened = 0;
+    // 見失ったマーカーも当たり判定は残るので、表示中のときだけ反応する
+    const marker = this.el.closest('a-marker');
     this.el.addEventListener('click', () => {
+      if (marker && !marker.object3D.visible) return;
       const now = Date.now();
       if (now - lastOpened < 1000) return;
       lastOpened = now;

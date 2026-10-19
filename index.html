@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- iOS Safari は apple- 付きしか認識しないので両方書く -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <title>DENDEN AR</title>
     <!-- A-Frame / AR.js (AR.js 3.4.8 が推奨する A-Frame 1.6.0 に合わせる)。同じ CDN から読んで接続を使い回す -->
@@ -18,12 +20,15 @@
         bottom: 32px;
         z-index: 10;
         transform: translateX(-50%);
+        box-sizing: border-box;
+        width: max-content;
+        max-width: calc(100vw - 32px);
         padding: 10px 20px;
-        border-radius: 999px;
+        border-radius: 20px;
         background: rgba(0, 0, 0, 0.6);
         color: #fff;
         font: 14px/1.4 system-ui, sans-serif;
-        white-space: nowrap;
+        text-align: center;
         pointer-events: none;
         transition: opacity 0.3s;
       }
